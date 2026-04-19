@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUBAS | COACHES</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+
+  background:#FFA000; /* Firebase yellow */
+  
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+.logout-btn{
+  background:none;
+  border:none;
+  color:#000;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.logout-btn:hover{
+  background:#0d6efd;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  font-weight:bold;
+  font-size:20px;
+}
+
+.logo i{
+  margin-right:10px;
+}
+
+nav ul{
+  display:flex;
+  list-style:none;
+  gap:25px;
+  align-items:center;
+}
+
+nav a{
+  text-decoration:none;
+  color:#333;
+}
+
+.register-btn{
+  background:#FFA000;
+  color:blacl;
+  padding:8px 15px;
+  border-radius:6px;
+}
+
+/* HERO */
+.hero{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 8%;
+  
+  background: #87CEEB; /* sky blue */
+  
+  color: #111;
+  position: relative;
+}
+
+
+
+/* bring content above effects */
+.hero-content{
+  position: relative;
+  z-index: 2;
+}
+
+/* 3D TEXT EFFECT */
+.hero h1{
+  font-size: 52px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+.hero p{
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.search-box{
+  margin-top:20px;
+  background:rgba(0,0,0,0.7);
+  padding:20px;
+  border-radius:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.search-box input{
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  flex:1;
+}
+
+.search-box button{
+  background:#1e90ff;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* DESTINATIONS */
+.section{
+  padding:50px 40px;
+  background:#eaeaea;
+  text-align:center;
+}
+
+.section h2{
+  margin-bottom:10px;
+  font-size:28px;
+  color:#0d2b4c;
+}
+
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.card{
+  width:300px;
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  text-align:left;
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card-body{
+  padding:15px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card .bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.card button{
+  background:#0d2b4c;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* WHY BOOK */
+.why{
+  padding:50px;
+  text-align:center;
+}
+
+.features{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+
+.feature{
+  max-width:250px;
+}
+
+.feature i{
+  font-size:30px;
+  margin-bottom:10px;
+  color:#0d2b4c;
+}
+
+/* FOOTER */
+footer{
+  background:#0d2b4c;
+  color:white;
+  padding:40px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+footer ul{
+  list-style:none;
+}
+
+footer li{
+  margin:5px 0;
+}
+
+.social i{
+  margin-right:10px;
+  cursor:pointer;
+}
+/* ============================= */
+/* RESPONSIVE FIX (MOBILE + TABLET)
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  nav {
+    padding: 10px 15px;
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 13px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 30px 15px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  /* CARDS */
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .cards {
+    gap: 15px;
+  }
+
+  /* FEATURES */
+  .features {
+    gap: 20px;
+  }
+
+  /* FOOTER */
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  /* BOOKING FORM */
+  #bookingForm > div {
+    width: 95% !important;
+    padding: 25px !important;
+  }
+
+  #bookingForm img {
+    width: 180px !important;
+  }
+
+  #bookingForm input {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 15px;
+  }
+
+  /* TOP: LOGO ONLY */
+  .logo {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+
+  /* BOTTOM: MENU */
+  nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    padding: 8px 0;
+    border-top: 1px solid #ddd;
+  }
+
+  nav ul li {
+    flex: 1;
+    text-align: center;
+  }
+
+  nav ul a,
+  nav ul button {
+    font-size: 12px;
+    display: block;
+    width: 100%;
+  }
+
+  .logout-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .register-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 15px;
+  }
+
+.logo{
+  display:flex;
+  align-items:center;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight:700;
+  font-size:28px; /* increased size */
+  color:#000;
+}
+
+  /* BOTTOM: MENU */
+  nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    padding: 8px 0;
+    border-top: 1px solid #ddd;
+  }
+
+  nav ul li {
+    flex: 1;
+    text-align: center;
+  }
+
+  nav ul a,
+  nav ul button {
+    font-size: 12px;
+    display: block;
+    width: 100%;
+  }
+
+  .logout-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .register-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+.input-box{
+  display:flex;
+  align-items:center;
+  border:2px solid #ccc;
+  border-radius:8px;
+  padding:12px;
+  width:100%;
+  max-width:600px;
+  height:50px;
+  background:white;
+}
+
+.input-box i{
+  margin-right:12px;
+  color:#0d2b4c;
+  min-width:20px;
+  text-align:center;
+}
+
+.input-box input{
+  border:none;
+  outline:none;
+  font-size:16px;
+  width:100%;
+  height:100%;
+  background:transparent;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+  opacity:0;
+  position:absolute;
+  right:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">
+    <i class="fas fa-bus"></i> MUBAS | COACHES
+  </div>
+
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#pickup">Book</a></li>
+    <li><a href="https://wa.me/265885451030" target="_blank">Help</a></li>
+    <li><a href="#" class="register-btn" onclick="goToRegister()">Register</a></li>
+    
+    <li><button class="logout-btn" onclick="logoutUser()">Logout</button></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>MPOTO RIDE<br>MUBAS | COACHES</h1>
+    <p>Travel home the easy way — organised by students, for students.</p>
+
+    <div class="search-box">
+      <input type="text" value="MUBAS">
+      <input type="text" value="15 May 2026">
+      <input type="text" value="18:00 hrs">
+      <button>VIEW BUS STATUS</button>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="section" id="pickup">
+  <h2>PICK-UP AREA | LOCATION?</h2>
+  <p>Check your location and book your seat today</p>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/1b/53/fc/f4/karonga-malawi-its-malawi.jpg">
+      <div class="card-body">
+        <h3>Karonga</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Karonga')">Book</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfjTcXmcJmKsjPi-ufV8_KYGb-bcWGWtbWBg&s">
+      <div class="card-body">
+        <h3>Rumphi</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Rumphi')">Book</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="https://www.yonecofm.com/wp-content/uploads/2019/07/Mzuzu-city_edited.jpg">
+      <div class="card-body">
+        <h3>Mzuzu</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Mzuzu')">Book</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="https://scontent.fllw2-1.fna.fbcdn.net/v/t51.75761-15/487155119_18062860400000661_6311654106094932942_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=13d280&_nc_aid=0&_nc_ohc=8wklO56EMY4Q7kNvwEJXzdW&_nc_oc=AdpZjLdb-J-OPfXtgNEooY__YlXsHDGUTZBPJcKEZfKXWBqZGQoeLT5VUbjyvWhPYHQ&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fllw2-1.fna&_nc_gid=M5W-RXFuMfMNWOL9d8RRjg&_nc_ss=7a389&oh=00_Af2Nut1URmlu0JaA87lh1QciKZubWo-H74KD7XBzMynVHA&oe=69E5DF9F">
+      <div class="card-body">
+        <h3>Mzimba</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Mzimba')">Book</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://scontent.fllw2-1.fna.fbcdn.net/v/t39.30808-6/482808451_642112355439285_4676285478518826727_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_ohc=TYQ3a7a67NgQ7kNvwFl1oQi&_nc_oc=Adql_CPEW9DsyQ7Ncy7lwQPbI45DAXOx21RlGbhaDHnWQTydimRClGB25XJOdwEUFSg&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fllw2-1.fna&_nc_gid=dez_m6pyxAg1JyI-mvkrxg&_nc_ss=7a389&oh=00_Af0wSBSZ-sIKHyTDUlh5-eC-PPLFYAsLRZzAMYlcHVgdlw&oe=69E5F8F5">
+      <div class="card-body">
+        <h3>Jenda</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Jenda')">Book</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://sadcmap.com/wp-content/uploads/2024/05/Kasungu_malawi003.jpeg">
+      <div class="card-body">
+        <h3>Kasungu</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Kasungu')">Book</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlGXCtrZcw_1HSGqsP_453ZTfQyzIBmOjF4w&s">
+      <div class="card-body">
+        <h3>Nkhata-Bay</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Nkhata-Bay')">Book</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://www.malawitourism.com/wp-content/uploads/2020/03/KK-Arial-Johan-DJI_0139-cropped-1220x800.jpg">
+      <div class="card-body">
+        <h3>Dwangwa</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Dwangwa')">Book</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://scontent.fllw2-1.fna.fbcdn.net/v/t1.6435-9/121537837_356125832472668_2294902725543825924_n.jpg?stp=dst-jpg_s590x590_tt6&_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=rY_16xdotIQQ7kNvwHK9Coh&_nc_oc=AdqCh3f82XBSIgZtnp8JIyoj8jvLz22i3cevRO3a3g7RMTPn8bWViVWdVJpSHgWVhlM&_nc_pt=5&_nc_zt=23&_nc_ht=scontent.fllw2-1.fna&_nc_gid=2-daf0y-6SyxC5YH6Z9Fyg&_nc_ss=7a389&oh=00_Af0F0YH_2NXua7y2E4y36GzJf_0UKvOqN-MPDzTeV9LWzg&oe=6A07A786">
+      <div class="card-body">
+        <h3>Nkhotakota</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Nkhotakota')">Book</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://lh3.googleusercontent.com/proxy/y-daD_DtYzjxfEpEOsxz7LT_9cAZA18cBAV-s0a7pa2V_C01E_8DnziI5bG3_aY2XTo2gQ9VBJYCcqdacVnCp0PWseWLlw">
+      <div class="card-body">
+        <h3>Salima</h3>
+        <div class="bottom">
+          <p>K110,000</p>
+          <button onclick="openBooking('Salima')">Book</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY BOOK -->
+<section class="why">
+  <h2>DO YOU KNOW OUR SERVICES?</h2>
+
+  <div class="features">
+
+    <div class="feature">
+      <i class="fas fa-cookie"></i>
+      <h4>FREE SNACKS & DRINKS</h4>
+      <p>Enjoy complimentary treats on every journey.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fas fa-tag"></i>
+      <h4>FAIR PRICES</h4>
+      <p>Student-friendly fares to save your money.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fas fa-wifi"></i>
+      <h4>FREE WI-FI</h4>
+      <p>Stay connected throughout your journey.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="social">
+    <p>SOCIAL MEDIA</p>
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-twitter"></i>
+    <a href="https://wa.me/265885451030" target="_blank" style="color:inherit; text-decoration:none;">
+  <i class="fab fa-whatsapp"></i>
+</a>
+  </div>
+    <div>
+    <h3>MUBAS | COACHES</h3>
+  </div>
+  <div>
+    <ul>
+      <li>About Us</li>
+      <li>FAQs</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+
+</footer>
+<!-- BOOKING FORM -->
+ 
+<div id="bookingForm" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+">
+
+<div style="
+  background:white;
+  padding:40px;
+  width:520px;
+  max-width:90%;
+  max-height:90vh;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+
+  gap:20px;
+  overflow-y:auto;
+  margin:auto;
+">
+
+  <!-- LOGO -->
+  <img src="data:image/png;base64,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" 
+       style="width:250px; margin-bottom:10px;">
+
+  <h3 id="formTitle">Passenger Details</h3>
+
+<div style="
+  background:white;
+  padding:40px;
+  width:700px;
+  max-width:95%;
+  max-height:90vh;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+
+  gap:20px;
+  overflow-y:auto;
+  margin:auto;
+">
+
+  <!-- First Name -->
+  <div style="
+  display:flex;
+  align-items:center;
+  border:2px solid #ccc;
+  border-radius:1px;
+  margin:-5px 0;
+  padding:12px;
+  width:115%;
+  max-width:600px;
+">
+  <i class="fas fa-user" style="margin-right:12px;"></i>
+  <input type="text"
+    style="
+      border:none;
+      width:100%;
+      outline:none;
+      font-size:16px;
+      padding:8px;
+    "
+    placeholder="Joe">
+</div>
+
+  <!-- Surname -->
+ <div style="
+  display:flex;
+  align-items:center;
+  border:2px solid #ccc;
+  border-radius:1px;
+  margin:-5px 0;
+  padding:12px;
+  width:115%;
+  max-width:600px;
+">
+  <i class="fas fa-user" style="margin-right:12px;"></i>
+  <input type="text"
+    style="
+      border:none;
+      width:100%;
+      outline:none;
+      font-size:16px;
+      padding:8px;
+    "
+    placeholder="Bosco">
+</div>
+<div style="
+  display:flex;
+  align-items:center;
+  border:2px solid #ccc;
+  border-radius:1px;
+  margin:-5px 0;
+  padding:12px;
+ width:115%;
+  max-width:600px;
+">
+  <i class="fas fa-phone" style="margin-right:12px;"></i>
+  <input type="text"
+    style="
+      border:none;
+      width:100%;
+      outline:none;
+      font-size:16px;
+      padding:8px;
+    "
+    placeholder="Contact Number">
+</div>
+
+  <!-- Guardian Number -->
+<div style="
+  display:flex;
+  align-items:center;
+  border:2px solid #ccc;
+  border-radius:1px;
+  margin:-5px 0;
+  padding:12px;
+  width:115%;
+  max-width:600px;
+">
+ <i class="fas fa-phone-volume" style="margin-right:12px;"></i>
+  <input type="text"
+    style="
+      border:none;
+      width:100%;
+      outline:none;
+      font-size:16px;
+      padding:8px;
+    "
+    placeholder="Guadian Number">
+</div>
+
+  <!-- Location -->
+<div style="
+  display:flex;
+  align-items:center;
+  border:2px solid #ccc;
+  border-radius:1px;
+  margin:-5px 0;
+  padding:12px;
+  width:115%;
+  max-width:600px;
+">
+  <i class="fas fa-map-marker-alt" style="margin-right:12px;"></i>
+  <input type="text" id="location" readonly
+    style="
+      border:none;
+      width:100%;
+      outline:none;
+      font-size:16px;
+      padding:8px;
+    "
+    placeholder="Location">
+</div>
+<!-- Date (MATCH OTHER BOX STYLE) -->
+<div style="
+  display:flex;
+  align-items:center;
+  border:2px solid #ccc;
+  border-radius:1px;
+  margin:-5px 0;
+  padding:12px;
+  width:115%;
+  max-width:600px;
+">
+  <i class="fas fa-calendar-alt" style="margin-right:12px;"></i>
+
+  <input type="date" id="travelDate"
+    style="
+      border:none;
+      width:100%;
+      outline:none;
+      font-size:16px;
+      padding:8px;
+      background:transparent;
+    ">
+</div>
+<!-- SEAT SELECTION (ADD HERE) -->
+<div style="
+  display:flex;
+  align-items:center;
+  border:2px solid #ccc;
+  border-radius:1px;
+  margin:-5px 0;
+  padding:12px;
+  width:115%;
+  max-width:600px;
+">
+  <i class="fas fa-chair" style="margin-right:12px;"></i>
+
+  <select id="seatNumber"
+    style="
+      border:none;
+      width:100%;
+      outline:none;
+      font-size:16px;
+      padding:8px;
+      background:transparent;
+    ">
+    <option value="">Select Seat Number</option>
+  </select>
+</div>
+<!-- ACTION BUTTONS -->
+<div style="
+  display:flex;
+  gap:15px;
+  width:115%;
+  max-width:600px;
+  margin-top:10px;
+">
+
+  <!-- CANCEL -->
+  <button type="button" onclick="closeForm()" style="
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#ccc;
+    color:#000;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+  ">
+    Cancel
+  </button>
+
+  <!-- CONTINUE -->
+  <button type="button" onclick="submitBooking()" style="
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:6px;
+    background:#1e90ff;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+  ">
+    Continue
+  </button>
+</div>
+</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-auth.js";
+import { getFirestore, doc, getDoc } 
+from "https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBby_IF_uDrXS8IKrERZ4T_27gaMyBstSQ",
+  authDomain: "login-form-be4da.firebaseapp.com",
+  projectId: "login-form-be4da",
+  storageBucket: "login-form-be4da.firebasestorage.app",
+  messagingSenderId: "111575470518",
+  appId: "1:111575470518:web:998c71ba668b1534567117"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// ✅ CHECK USER STATE PROPERLY
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    // 🔴 No user → go to login page
+    window.location.replace("index.html");
+    return;
+  }
+
+  // ✅ Get user data
+  const docRef = doc(db, "users", user.uid);
+  const docSnap = await getDoc(docRef);
+
+  let name = "";
+
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    name = data.firstName + " " + data.lastName;
+  } else {
+    name = user.displayName || user.email.split("@")[0];
+  }
+
+  const heroWelcome = document.getElementById("heroWelcome");
+  if (heroWelcome) {
+    heroWelcome.textContent = "Welcome, " + name;
+  }
+});
+
+// ✅ LOGOUT FUNCTION (WORKING)
+window.logoutUser = function () {
+  signOut(auth)
+    .then(() => {
+      window.location.replace("index.html"); // 🔁 Redirect to login
+    })
+    .catch((error) => {
+      console.error("Logout error:", error);
+    });
+};
+</script>
+
+<script>
+
+function openBooking(locationName){
+  document.getElementById("bookingForm").style.display = "flex";
+  document.getElementById("location").value = locationName;
+}
+
+function closeForm(){
+  document.getElementById("bookingForm").style.display = "none";
+}
+
+function submitBooking(){
+  const firstName = document.getElementById("firstName").value;
+  const lastName = document.getElementById("lastName").value;
+  const phone = document.getElementById("phone").value;
+  const guardian = document.getElementById("guardian").value;
+  const location = document.getElementById("location").value;
+  const date = document.getElementById("travelDate").value;
+  const seat = document.getElementById("seatNumber").value;
+
+  if(!firstName || !lastName || !phone || !guardian || !date || !seat){
+    alert("Please fill all fields");
+    return;
+  }
+  
+  alert(
+    "Booking Confirmed!\n\n" +
+    "Name: " + firstName + " " + lastName + "\n" +
+    "Phone: " + phone + "\n" +
+    "Guardian: " + guardian + "\n" +
+    "Location: " + location + "\n" +
+    "Date: " + date +"\n"+
+    "Seat: " + seat 
+  );
+
+  closeForm();
+}
+
+// ✅ REGISTER REDIRECT (FIXED)
+function goToRegister(){
+  window.location.href = "register.html";
+}
+// =====================
+// CREATE SEATS 1–57
+// =====================
+window.addEventListener("DOMContentLoaded", function(){
+
+  const seatSelect = document.getElementById("seatNumber");
+
+  if(seatSelect){
+    for (let i = 1; i <= 57; i++) {
+      let option = document.createElement("option");
+      option.value = i;
+      option.textContent = "Seat " + i;
+      seatSelect.appendChild(option);
+    }
+  }
+
+});
+</script>
+</body>
+</html>

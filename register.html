@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOOKING | MPTOTO COACHES</title>
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f5f7fa;
+}
+
+header{
+  background:#FFA000;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.container{
+  display:flex;
+  gap:20px;
+  padding:30px;
+  flex-wrap:wrap;
+}
+
+.left,.right{
+  flex:1;
+  min-width:300px;
+}
+
+.card{
+  background:white;
+  padding:10px;
+  border-radius:12px;
+  margin-bottom:20px;
+  box-shadow:0 10px 10px rgba(24, 24, 24, 0.1);
+}
+
+.input-group{
+  display:flex;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+input, select{
+  flex:1;
+  padding:15px;
+  border:none;
+  background:#eef1f5;
+  border-radius:3px;
+}
+
+.full{
+  width:100%;
+  margin-bottom:15px;
+}
+
+.pay-btn{
+  width:100%;
+  padding:15px;
+  background:#1e90ff;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>MPOTO COACHES</h2>
+  <div>Registration Page</div>
+</header>
+
+<!-- ✅ WEB3FORMS START -->
+<form action="https://api.web3forms.com/submit" method="POST">
+
+  <!-- 🔑 YOUR ACCESS KEY -->
+  <input type="hidden" name="access_key" value="d7c0489d-062e-4fa3-b98b-6d5aa4bf7265">
+  <input type="hidden" name="subject" value="New Coach Registration Booking">
+  <input type="hidden" name="redirect" value="http://127.0.0.1:5500/Homepage.html">
+
+<div class="container">
+
+  <!-- LEFT -->
+  <div class="left">
+
+    <div class="card">
+      <h3>Primary Passenger</h3>
+
+      <div class="input-group">
+        <input type="text" name="first_name" placeholder="First Name" required>
+        <input type="text" name="last_name" placeholder="Last Name" required>
+      </div>
+
+      <input type="date" class="full" name="dob" required>
+    </div>
+
+    <div class="card">
+      <h3>Contact Information</h3>
+
+      <select class="full" name="location" required>
+        <option>Chitipa</option>
+        <option>Karonga</option>
+        <option>Rumphi</option>
+        <option>Mzuzu City</option>
+        <option>Mzimba</option>
+        <option>Kasungu</option>
+        <option>Nkhata-Bay</option>
+        <option>Salima</option>
+      </select>
+
+      <div class="input-group">
+        <input type="text" value="+265" name="country_code">
+        <input type="text" name="phone" placeholder="Phone Number" required>
+      </div>
+
+      <input type="email" class="full" name="email" placeholder="Email" required>
+    </div>
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="right">
+
+    <div class="card">
+      <h3>TRIP DETAILS</h3>
+      <p><strong>MPOTO RIDE COACHES </strong></p>
+      <p>Departure: 16:00 hrs</p>
+      <p>Date: 25th July, 2026</p>
+    </div>
+    <div class="card">
+      <h3>DEPOSIT FARE</h3>
+      <p>K10,000</p>
+      <h3>TOTAL FARE</h3>
+      <p>K110,000</p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ✅ SUBMIT BUTTON -->
+<div style="padding:0 30px 30px;">
+  <button type="submit" class="pay-btn">
+    Confirm Registration →
+  </button>
+</div>
+
+</form>
+<!-- WEB3FORMS END -->
+
+</body>
+</html>
