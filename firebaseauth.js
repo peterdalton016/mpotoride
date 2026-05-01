@@ -51,7 +51,6 @@
       return setDoc(docRef, userData);
     })
     .then(() => {
-      grecaptcha.reset();
       showMessage('Account Created Successfully', 'signUpMessage');
       window.location.href = 'index.html';
     })
@@ -67,6 +66,27 @@
   const signIn=document.getElementById('submitSignIn');
   signIn.addEventListener('click', (event) => {
   event.preventDefault();
+
+  const recaptchaResponse = grecaptcha.getResponse();
+
+if (!recaptchaResponse) {
+  showMessage('Please complete reCAPTCHA', 'signInMessage');
+  return;
+}
+
+// VERIFY USING GOOGLE APPS SCRIPT
+const verify = await fetch("YOUR_APPS_SCRIPT_URL", {
+  method: "POST",
+  body: JSON.stringify({ token: recaptchaResponse })
+});
+
+const result = await verify.json();
+
+if (!result.success) {
+  showMessage('reCAPTCHA verification failed', 'signInMessage');
+  return;
+}
+
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const auth = getAuth();
